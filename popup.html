@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Generator</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 class="title">Password Generator</h1>
+    </header>
+
+    <div class="display-container">
+      <input type="text" id="passwordOutput" readonly placeholder="Click Generate..." aria-label="Generated Password">
+      <button id="copyBtn" class="icon-btn" title="Copy to Clipboard" aria-label="Copy to Clipboard">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+    <path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76z" fill="currentColor" />
+    <path d="m9 12 2 2 4-4" stroke="var(--card-bg, #ffffff)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
+      </button>
+    </div>
+
+    <div class="strength-container">
+      <span class="strength-label">Strength:</span>
+      <span id="strengthText" class="strength-value">None</span>
+      <div class="strength-bar-bg">
+        <div id="strengthBar" class="strength-bar-fill"></div>
+      </div>
+    </div>
+
+    <div class="options-container">
+      <div class="option-row">
+        <label for="lengthSlider">Length: <span id="lengthValue">16</span></label>
+        <input type="range" id="lengthSlider" min="8" max="12" value="12">
+      </div>
+
+      <div class="checkbox-grid">
+        <label class="checkbox-label">
+          <input type="checkbox" id="includeUppercase" checked> Uppercase
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="includeNumbers" checked> Numbers
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="includeLowercase" checked> Lowercase
+        </label>
+        <label class="checkbox-label">
+          <input type="checkbox" id="includeSymbols" checked> Symbols
+        </label>
+      </div>
+    </div>
+
+    <button id="generateBtn" class="primary-btn">Generate Password</button>
+
+    <div id="statusMessage" class="status-message" aria-live="polite"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
